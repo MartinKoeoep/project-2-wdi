@@ -1,0 +1,19 @@
+<h2><%= artwork.name %></h2>
+<div class="colums">
+  <div class="column is half">
+    <img src="<%= artwork.source %>" alt="<%= artwork.artName %>">
+  </div>
+  <div class="column is half">
+    <ul>
+      <li>Name <%= artwork.artName %></li>
+      <li>Cost <%= artwork.cost %></li>
+      <li>Artist <%= artwork.artist %></li>
+      <li>Client <%= artwork.client %></li>
+    </ul>
+    <a href="/artworks/<%= artwork.id %>/edit">Edit</a>
+    <form action="/artworks/<%= artwork.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button name="button">Delete</button>
+    </form>
+  </div>
+</div>

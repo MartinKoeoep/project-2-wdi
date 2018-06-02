@@ -1,26 +1,30 @@
+// require the express library
 const express = require('express');
+const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
 const methodOverride = require('method-override');
-const session = require('express-session');
-const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
 
 const databaseURI = 'mongodb://localhost/project2artistDB';
 
 mongoose.connect(databaseURI);
 
-const router = require('./config/root');
+const router = require('./config/routes');
 
-
+// create an express app
 const app = express();
+
 // set up our templating engine
 // THIS MUST COME BEFORE OUR REQUEST HANDLERS
 app.set('view engine','ejs');
 app.set('views', `${__dirname}/views`);
-app.use(expressLayouts);
+app.use(ejsLayouts);
 
-// setting up static folder
+// set up our static folder
+// THIS MUST COME BEFORE OUR REQUEST HANDLERS
 app.use(express.static(`${__dirname}/public`));
+
+// setup bodyParser to handle Post requests
 
 app.use(bodyParser.urlencoded({ extended: true}));
 
@@ -34,4 +38,5 @@ app.use(methodOverride((req)=>{
 
 app.use(router);
 
-app.listen(4000, () => console.log(`Express started on port: ${4000}`));
+// listen out for incoming requests on PORT 4000
+app.listen(4000, ()=> console.log('Express is listening to port 4000'));

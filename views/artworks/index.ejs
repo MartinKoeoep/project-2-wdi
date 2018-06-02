@@ -1,0 +1,31 @@
+<h1 class="title"><%= title %></h1>
+
+<div class="columns">
+  <% artworks.forEach( (product, key) => { %>
+    <div class="column is-one-third-desktop is-half-tablet">
+      <div class="card">
+        <div class="card-image">
+          <figure class="image">
+            <a href='/artworks/<%= product._id %>'>
+              <img src="<%= product.source %>" alt="<%= product.artName %>">
+            </a>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <h4 class="title is-4">
+              <a href='/artworks/<%= product._id %>'>
+                <%= product.artName %>
+              </a>
+            </h4>
+            <h6 class="subtitle is-6">
+              <a href='<%= product.artistProfile %>'>
+            From <%= product.artist %> for £<%= product.cost && product.cost.toFixed(2) %>
+              </a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
