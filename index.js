@@ -4,13 +4,14 @@ const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const session = require('express-session');
 
 const databaseURI = 'mongodb://localhost/project2artistDB';
 
 mongoose.connect(databaseURI);
 
 const router = require('./config/routes');
-
+const User = require('./models/user');
 // create an express app
 const app = express();
 
@@ -35,6 +36,27 @@ app.use(methodOverride((req)=>{
     return method;
   }
 }));
+
+
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'ssh it\'s a secret',
+  resave: false,
+  saveUninitialized: false
+}));
+
+
+app.use((req, res, next) => {
+  if(!req.session.userId) return next();
+  User
+    .findById(req.session.userId)
+    .populate({path: 'pictures', populate: {path: 'creator'}})
+    .exec()
+    .then((user) =>{
+      res.locals.user = user;
+      res.locals.isLoggedIn = true;
+      next();
+    });
+});
 
 app.use(router);
 

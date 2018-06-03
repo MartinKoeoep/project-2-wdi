@@ -12,19 +12,43 @@
   </div>
   <div class="navbar-menu" id="navMenu">
     <div class="navbar-end">
-      <a href="/artworks" class="navbar-item has-text-white">
+      <a href="/artworks" class="navbar-item">
         Artworks
       </a>
     </div>
   </div>
-  <div class="navbar-item has-dropdown is-hoverable has-background-dark">
-    <a class="navbar-link ">
-      Add..
-    </a>
-    <div class="navbar-dropdown has-background-dark">
-      <a href="/artworks/new" class="navbar-item">
-        Artwork
+  <% if(locals.isLoggedIn){%>
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link ">
+        Add..
       </a>
+      <div class="navbar-dropdown">
+        <a href="/artworks/new" class="navbar-item">
+          Artwork
+        </a>
+      </div>
     </div>
+  <% } %>
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link ">
+      Account
+    </a>
+    <% if(locals.isLoggedIn){%>
+      <li>Hi <%= locals.user.username %></li>
+      <div class="navbar-dropdown">
+        <a href="/logout" class="navbar-item">
+          Logout
+        </a>
+      </div>
+      <%} else {%>
+        <div class="navbar-dropdown">
+          <a href="/register" class="navbar-item">
+            Sign Up
+          </a>
+          <a href="/login" class="navbar-item">
+            Login
+          </a>
+        </div>
+      <% } %>
   </div>
 </nav>

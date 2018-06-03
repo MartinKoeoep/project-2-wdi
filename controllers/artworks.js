@@ -47,7 +47,7 @@ function artworksUpdate(req, res){
     .findById(req.params.id)
     .update(req.body)
     .then( artwork =>{
-      return res.redirect(`/pictures/${artwork.id}`);
+      return res.redirect(`/artworks/${req.params.id}`);
     });
 }
 

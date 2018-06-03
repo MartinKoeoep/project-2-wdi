@@ -1,6 +1,6 @@
 <h2>Edit <%= artwork.name%></h2>
 
-<form action="/artworks" method="post">
+<form action="/artworks/<%= artwork.id %>" method="post">
   <input type="hidden" name="_method" value="PUT">
   <div class="">
     <label class="label">Art name</label>
