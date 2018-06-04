@@ -1,0 +1,9 @@
+<% users.forEach((user) => { %>
+  <div class="userCard">
+    <h1>
+      <a href='/users/<%= user._id %>'>
+        <%= user.username %>
+      </a>
+    </h1>
+  </div>
+<% }) %>

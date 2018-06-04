@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-const artists = require('../controllers/artists');
+const users = require('../controllers/users');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const artworksController = require('../controllers/artworks');
@@ -21,8 +21,17 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
-router.route('/artists')
-  .get(artists.index);
+
+
+router.route('/users')
+  .get(users.index);
+router.route('/users/:id')
+  .get(users.show)
+  .put(users.update);
+router.route('users/:id/edit')
+  .get(users.edit);
+
+
 
 router.route('/artworks')
   .get(artworksController.index)
