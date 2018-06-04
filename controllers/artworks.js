@@ -52,7 +52,7 @@ function artworksUpdate(req, res){
   Artworks
     .findById(req.params.id)
     .update(req.body)
-    .then( artwork =>{
+    .then( () =>{
       return res.redirect(`/artworks/${req.params.id}`);
     });
 }

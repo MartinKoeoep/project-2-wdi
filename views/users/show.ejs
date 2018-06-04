@@ -6,6 +6,17 @@
 <div class="column is-half">
   <h3>Artist info</h3>
   <p><%= user.bio %></p>
-
+  <h4><%= user.prefStyles.join(',  ') %></h4>
 </div>
 <h2><%= user.username%>'s artwork!'</h2>
+<ul>
+  <% locals.user.artworks.forEach( artwork =>{ %>
+    <li>
+      <%= artwork.title %>
+      <img style="max-width: 200px " src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
+      <% if(artwork.creator){ %>
+        <%= artwork.creator.username %>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>

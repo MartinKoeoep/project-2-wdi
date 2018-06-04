@@ -8,13 +8,14 @@ const userSchema = new mongoose.Schema({
   // Artist bio information
   displayPic: String,
   bio: String,
+  avaliability: Boolean,
   prefStyles: Array
 },{
   timestamps: true
 });
 
 userSchema.virtual('artworks', {
-  ref: 'Artworks',
+  ref: 'Artwork',
   foreignField: 'creator',
   localField: '_id'
 });
@@ -42,21 +43,7 @@ userSchema.pre('validate', function(next){
   }
   next();
 });
-//
-// userSchema.virtual('somethingNameHere')
-//   .get(function createCheckBox(){
-//     const checkboxField = document.getElementById('checkboxField');
-//     const checkboxValues = ['digital','model-edit','image-edit','photography'];
-//     const premadeValues = user.prefStyles.split(',');
-//     checkboxValues.forEach((itemInArray)=>{
-//       if (premadeValues.includes(itemInArray)){
-//         // create checkbox input field with checked
-//
-//       } else {
-//         // create checkbox input field without checked
-//       }
-//     });
-//   });
+
 
 
 module.exports = mongoose.model('User', userSchema);

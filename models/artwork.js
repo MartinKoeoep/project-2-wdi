@@ -10,4 +10,4 @@ const artworksSchema = new mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Artworks', artworksSchema);
+module.exports = mongoose.model('Artwork', artworksSchema);

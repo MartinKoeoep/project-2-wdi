@@ -10,6 +10,7 @@ function indexRoute(req, res) {
 function userShow(req, res){
   User
     .findById(req.params.id)
+    .populate('artworks')
     .exec()
     .then((user)=>{
       res.render('users/show', {user});
@@ -32,7 +33,7 @@ function userUpdate(req, res){
   User
     .findById(req.params.id)
     .update(req.body)
-    .then( user =>{
+    .then( () =>{
       return res.redirect(`/users/${req.params.id}`);
     });
 }
