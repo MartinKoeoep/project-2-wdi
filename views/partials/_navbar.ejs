@@ -43,6 +43,9 @@
     </a>
     <% if(locals.isLoggedIn){%>
       <div class="navbar-dropdown">
+        <a href="/users/<%= user.id %>/edit" class="navbar-item">
+          Edit profile
+        </a>
         <a href="/logout" class="navbar-item">
           Logout
         </a>

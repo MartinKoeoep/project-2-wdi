@@ -4,7 +4,11 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   username: String,
   email: { type: String, unique: true, required: true},
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  // Artist bio information
+  displayPic: String,
+  bio: String,
+  prefStyles: Array
 },{
   timestamps: true
 });
@@ -32,13 +36,27 @@ userSchema.virtual('passwordConfirmation')
     this._passwordConfirmation = passwordConfirmation;
   });
 
-
 userSchema.pre('validate', function(next){
   if(this.isModified('password') && this._passwordConfirmation !== this.password){
     this.invalidate('password');
   }
   next();
 });
+//
+// userSchema.virtual('somethingNameHere')
+//   .get(function createCheckBox(){
+//     const checkboxField = document.getElementById('checkboxField');
+//     const checkboxValues = ['digital','model-edit','image-edit','photography'];
+//     const premadeValues = user.prefStyles.split(',');
+//     checkboxValues.forEach((itemInArray)=>{
+//       if (premadeValues.includes(itemInArray)){
+//         // create checkbox input field with checked
+//
+//       } else {
+//         // create checkbox input field without checked
+//       }
+//     });
+//   });
 
 
 module.exports = mongoose.model('User', userSchema);

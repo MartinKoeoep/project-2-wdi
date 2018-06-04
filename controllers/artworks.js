@@ -38,7 +38,6 @@ function artworksCreate(req, res){
 }
 
 function artworksEdit(req, res){
-  console.log(res.locals);
   Artworks
     .findById(req.params.id)
     .populate('creator')
@@ -50,7 +49,6 @@ function artworksEdit(req, res){
 }
 
 function artworksUpdate(req, res){
-  if (res.locals.isLoggedIn) return res.redirect('/');
   Artworks
     .findById(req.params.id)
     .update(req.body)

@@ -14,6 +14,7 @@ function userShow(req, res){
     .then((user)=>{
       res.render('users/show', {user});
     });
+
 }
 
 function userEdit(req, res){
@@ -28,7 +29,6 @@ function userEdit(req, res){
 }
 
 function userUpdate(req, res){
-  if (res.locals.isLoggedIn) return res.redirect('/');
   User
     .findById(req.params.id)
     .update(req.body)
