@@ -19,8 +19,8 @@
               </a>
             </h4>
             <h6 class="subtitle is-6">
-              <a href='<%= product.artistProfile %>'>
-            From <%= product.artist %> for £<%= product.cost && product.cost.toFixed(2) %>
+              <a href='/users/<%= product.creator._id %>'>
+            For £<%= product.cost && product.cost.toFixed(2) %>
               </a>
             </h6>
           </div>

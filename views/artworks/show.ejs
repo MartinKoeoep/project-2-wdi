@@ -6,8 +6,8 @@
   <div class="column is-one-quarter">
     <ul>
       <li>Name <%= artwork.artName %></li>
-      <li>Cost <%= artwork.cost %></li>
-      <li>Artist <%= artwork.creator.username %></li>
+      <li>Cost £<%= artwork.cost %></li>
+      <li><a href='/users/<%= artwork.creator._id %>'>Artist <%= artwork.creator.username %></a></li>
       <li>Client <%= artwork.client %></li>
     </ul>
     <% if((locals.isLoggedIn)){%>

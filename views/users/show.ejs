@@ -1,7 +1,11 @@
-<h2><%= user.username %></h2>
-<% if((locals.isLoggedIn)){%>
-  <% console.log(locals.user.username, user.username) %>
-  <% if((locals.user.username === user.username)){%>
-    <a href="/users/<%= user.id %>/edit">Edit</a>
-  <% } %>
-<% } %>
+<div class="column is-one-quarter">
+  <h2><%= user.username %></h2>
+  <img src="<%= user.displayPic %>" alt="<$= user.username %>">
+  <a email="<%= user.email %>"><%= user.email %></a>
+</div>
+<div class="column is-half">
+  <h3>Artist info</h3>
+  <p><%= user.bio %></p>
+
+</div>
+<h2><%= user.username%>'s artwork!'</h2>
