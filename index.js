@@ -49,7 +49,7 @@ app.use((req, res, next) => {
   if(!req.session.userId) return next();
   User
     .findById(req.session.userId)
-    .populate({path: 'pictures', populate: {path: 'creator'}})
+    .populate({path: 'artworks', populate: {path: 'creator'}})
     .exec()
     .then((user) =>{
       res.locals.user = user;

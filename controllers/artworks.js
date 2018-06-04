@@ -15,6 +15,7 @@ function artworksIndex(req, res){
 function artworksShow(req, res){
   Artworks
     .findById(req.params.id)
+    .populate('creator')
     .exec()
     .then((artwork)=>{
       res.render('artworks/show', {artwork});
@@ -23,7 +24,7 @@ function artworksShow(req, res){
 
 function artworksNew(req, res){
   if (!res.locals.isLoggedIn) return res.redirect('/');
-  res.render('pictures/new');
+  res.render('artworks/new');
 }
 
 function artworksCreate(req, res){
@@ -37,15 +38,19 @@ function artworksCreate(req, res){
 }
 
 function artworksEdit(req, res){
+  console.log(res.locals);
   Artworks
     .findById(req.params.id)
+    .populate('creator')
     .exec()
     .then((artwork)=>{
+      if (!(res.locals.username === artwork.creator.username)) return res.redirect('/');
       res.render('artworks/edit', {artwork});
     });
 }
 
 function artworksUpdate(req, res){
+  if (res.locals.isLoggedIn) return res.redirect('/');
   Artworks
     .findById(req.params.id)
     .update(req.body)
@@ -55,6 +60,7 @@ function artworksUpdate(req, res){
 }
 
 function artworksDelete(req, res){
+  if (!res.locals.isLoggedIn) return res.redirect('/');
   Artworks
     .findById(req.params.id)
     .exec()
