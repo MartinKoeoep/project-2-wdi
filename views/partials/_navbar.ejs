@@ -11,9 +11,17 @@
     </a>
   </div>
   <div class="navbar-menu" id="navMenu">
+    <% if(locals.isLoggedIn){%>
+    <div class="navbar-start">
+      <h2>Welcome back, <%= locals.user.username %>!</h2>
+    </div>
+    <% } %>
     <div class="navbar-end">
       <a href="/artworks" class="navbar-item">
         Artworks
+      </a>
+      <a href="/artists" class="navbar-item">
+        Artists
       </a>
     </div>
   </div>
@@ -34,7 +42,6 @@
       Account
     </a>
     <% if(locals.isLoggedIn){%>
-      <li>Hi <%= locals.user.username %></li>
       <div class="navbar-dropdown">
         <a href="/logout" class="navbar-item">
           Logout

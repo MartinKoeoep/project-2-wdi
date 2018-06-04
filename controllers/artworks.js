@@ -22,10 +22,13 @@ function artworksShow(req, res){
 }
 
 function artworksNew(req, res){
-  res.render('artworks/new');
+  if (!res.locals.isLoggedIn) return res.redirect('/');
+  res.render('pictures/new');
 }
 
 function artworksCreate(req, res){
+  const artworkData = req.body;
+  artworkData['creator'] = res.locals.user.id;
   Artworks
     .create(req.body)
     .then((artwork) => {

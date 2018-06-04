@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const artworksSchema = new mongoose.Schema({
   artName: String,
   cost: Number,
-  artist: String,
+  artist: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   client: String,
   source: String
 }, {

@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+
+const artists = require('../controllers/artists');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const artworksController = require('../controllers/artworks');
@@ -19,7 +21,8 @@ router.route('/login')
 router.route('/logout')
   .get(sessions.delete);
 
-
+router.route('/artists')
+  .get(artists.index);
 
 router.route('/artworks')
   .get(artworksController.index)
