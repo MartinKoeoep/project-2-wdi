@@ -4,6 +4,9 @@ $(() => {
   const $modal = $('.modal');
   const $modalbutton = $('.modal-close');
 
+  var elements = document.querySelectorAll('.editable'),
+    editor = new MediumEditor('.editable');
+
   $modalImage.on('click', (event)=>{
     // console.log('click', event.target.id);
     const imageId = event.target.id;
