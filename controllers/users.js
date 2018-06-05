@@ -19,7 +19,6 @@ function userShow(req, res){
 }
 
 function userEdit(req, res){
-  console.log(req.params.id);
   User
     .findById(req.params.id)
     .exec()

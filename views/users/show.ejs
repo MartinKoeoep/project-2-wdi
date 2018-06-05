@@ -8,15 +8,17 @@
   <p><%= user.bio %></p>
   <h4><%= user.prefStyles.join(',  ') %></h4>
 </div>
-<h2><%= user.username%>'s artwork!'</h2>
-<ul>
-  <% locals.user.artworks.forEach( artwork =>{ %>
-    <li>
-      <%= artwork.title %>
-      <img style="max-width: 200px " src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
-      <% if(artwork.creator){ %>
-        <%= artwork.creator.username %>
-      <% } %>
-    </li>
-  <% }) %>
-</ul>
+<h2><%= user.username%>'s artwork!</h2>
+
+<% locals.user.artworks.forEach( artwork =>{ %>
+  <img class="<%= artwork._id%>" src="<%= artwork.source %>" alt="<%= artwork.artName %>">
+  <div class="<%= artwork._id%> modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+<% }) %>

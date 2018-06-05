@@ -1,10 +1,24 @@
 <% users.forEach((user) => { %>
-  <div class="userCard">
-    <h1>
-      <a href='/users/<%= user._id %>'>
-        <%= user.username %>
-      </a>
-    </h1>
-    <p><%= user.prefStyles.join(', ') %></p>
-  </div>
+  <% if (user.prefStyles.length > 0){ %>
+    <div class="userCard">
+      <h1>
+        <a href='/users/<%= user._id %>'>
+          <%= user.username %>
+        </a>
+      </h1>
+      <p><%= user.prefStyles.join(', ') %></p>
+    </div>
+  <% } %>
+<% }) %>
+<% users.forEach((user) => { %>
+  <% if (user.prefStyles.length === 0){ %>
+    <div class="userCard">
+      <h1>
+        <a href='/users/<%= user._id %>'>
+          <%= user.username %>
+        </a>
+      </h1>
+      <p> The User has not set up an Artist profile</p>
+    </div>
+  <% } %>
 <% }) %>
