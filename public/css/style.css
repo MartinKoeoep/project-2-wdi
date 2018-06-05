@@ -39,3 +39,28 @@ div .indexcolumn{
 .loginInfo label{
   text-align: left;
 }
+
+.userCard{
+  width: 760px;
+  height: 65px;
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+
+}
+.displayPic{
+  height: 65px;
+  width: 65px;
+}
+
+.styles{
+  text-align: right;
+}
+
+.fa-times-circle{
+  color: gray;
+}
+
+.fa-check-square{
+  color: green;
+}

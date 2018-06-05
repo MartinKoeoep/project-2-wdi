@@ -52,7 +52,7 @@ app.use((req, res, next) => {
     .populate({path: 'artworks', populate: {path: 'creator'}})
     .exec()
     .then((user) =>{
-      res.locals.user = user;
+      res.locals.currentUser = user;
       res.locals.isLoggedIn = true;
       next();
     });

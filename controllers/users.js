@@ -23,8 +23,12 @@ function userEdit(req, res){
     .findById(req.params.id)
     .exec()
     .then((user)=>{
-      // if (!(res.locals.username === user.creator.username)) return res.redirect('/');
-      res.render('users/edit', {user});
+      if (req.params.id === res.locals.currentUser.id){
+        res.render('users/edit', {user});
+      } else {
+        return res.redirect('/');
+      }
+
     });
 }
 
