@@ -1,3 +1,12 @@
+body{
+  background-color: #D3D3D3;
+}
+.columns{
+  background-color: white;
+}
+.column{
+  margin: auto;
+}
 div .indexcolumn{
   height: 300px;
   padding: 5px;
@@ -8,6 +17,7 @@ div .indexcolumn{
 .smallImage{
   max-height: 270px;
   max-width: auto;
+  background-color: white;
 }
 
 .artInfo{
@@ -24,7 +34,7 @@ div .indexcolumn{
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .loginForm{
@@ -43,11 +53,30 @@ div .indexcolumn{
 .userCard{
   width: 760px;
   height: 65px;
+  border-radius: 2px;
   border: 1px solid black;
+  box-shadow: 3px 3px grey;
   margin: auto;
   display: flex;
-
+  margin-bottom: 5px;
 }
+.userCardSmall{
+  width: 760px;
+  height: 30px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  box-shadow: 3px 3px grey;
+  margin: auto;
+  display: flex;
+}
+.userCardSmall p{
+  color: grey;
+  font-size: 0.8em;
+  line-height: 30px;
+  padding-left: 10px;
+}
+
 .displayPic{
   height: 65px;
   width: 65px;

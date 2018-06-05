@@ -1,7 +1,16 @@
 <h2><%= artwork.name %></h2>
 <div class="columns is-multiline">
   <div class="column is-half">
-    <img src="<%= artwork.source %>" alt="<%= artwork.artName %>">
+    <img id="<%= artwork._id %>" class="modalImage" src="<%= artwork.source %>" alt=" <%= artwork.artName %> ">
+  </div>
+  <div  class="modal <%= artwork._id %>">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <p class="image">
+        <img class="screensizeimage" src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
+      </p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
   </div>
   <div class="column is-one-quarter">
     <ul class="">

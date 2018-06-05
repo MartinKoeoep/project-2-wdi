@@ -1,32 +1,34 @@
-<% users.forEach((user) => { %>
-  <% if (user.prefStyles.length > 0){ %>
-    <a href='/users/<%= user._id %>'>
-    <div class="userCard">
-      <img class="displayPic" src="<%= user.displayPic %>" alt="<$= user.username %>">
-      <div class="userAndAvaliability">
-      <h1>
-          <%= user.username %>
-      </h1>
-      <% if (user.avaliability) {%>
-        <i class="fas fa-check-square fa-2x"></i>
-      <%} else { %>
-        <i class="fas fa-times-circle fa-2x"></i>
-      <%}%>
+<div class="column">
+  <% users.forEach((user) => { %>
+    <% if (user.prefStyles.length > 0){ %>
+      <a href='/users/<%= user._id %>'>
+      <div class="userCard">
+        <img class="displayPic" src="<%= user.displayPic %>" alt="<$= user.username %>">
+        <div class="userAndAvaliability">
+        <h1>
+            <%= user.username %>
+        </h1>
+        <% if (user.avaliability) {%>
+          <i class="fas fa-check-square fa-2x"></i>
+        <%} else { %>
+          <i class="fas fa-times-circle fa-2x"></i>
+        <%}%>
+        </div>
+        <div class='styles'> <%= user.prefStyles.join(', ') %> </div>
       </div>
-      <div class='styles'> <%= user.prefStyles.join(', ') %> </div>
-    </div>
-    </a>
-  <% } %>
-<% }) %>
-<% users.forEach((user) => { %>
-  <% if (user.prefStyles.length === 0){ %>
-    <a href='/users/<%= user._id %>'>
-    <div class="userCardSmall">
-      <h1>
-          <%= user.username %>
-      </h1>
-      <p> The User has not set up an Artist profile</p>
-    </div>
       </a>
-  <% } %>
-<% }) %>
+    <% } %>
+  <% }) %>
+  <% users.forEach((user) => { %>
+    <% if (user.prefStyles.length === 0){ %>
+      <a href='/users/<%= user._id %>'>
+      <div class="userCardSmall">
+        <h1>
+            <%= user.username %>
+        </h1>
+        <p> The User has not set up an Artist profile</p>
+      </div>
+        </a>
+    <% } %>
+  <% }) %>
+</div>

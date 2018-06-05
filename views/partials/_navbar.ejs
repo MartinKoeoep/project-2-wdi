@@ -1,4 +1,4 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-turqoise" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a id='check'class="navbar-item" href="/">
       <img src="https://imgur.com/t5VqfJz.jpg" alt="A Glaring Goat">
@@ -23,42 +23,36 @@
       <a href="/users" class="navbar-item">
         Users
       </a>
-    </div>
-  </div>
-  <% if(locals.isLoggedIn){%>
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link ">
-        Add..
+      <% if(locals.isLoggedIn){%>
+      <a href="/artworks/new" class="navbar-item">
+        Artwork
       </a>
-      <div class="navbar-dropdown">
-        <a href="/artworks/new" class="navbar-item">
-          Artwork
+      <% } %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link ">
+          Account
         </a>
+        <% if(locals.isLoggedIn){%>
+          <div class="navbar-dropdown">
+            <a href="/users/<%= locals.currentUser.id %>/edit" class="navbar-item">
+              Edit profile
+            </a>
+            <a href="/logout" class="navbar-item">
+              Logout
+            </a>
+          </div>
+          <%} else {%>
+            <div class="navbar-dropdown">
+              <a href="/register" class="navbar-item">
+                Sign Up
+              </a>
+              <a href="/login" class="navbar-item">
+                Login
+              </a>
+            </div>
+          <% } %>
       </div>
     </div>
-  <% } %>
-  <div class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link ">
-      Account
-    </a>
-    <% if(locals.isLoggedIn){%>
-      <div class="navbar-dropdown">
-        <a href="/users/<%= locals.currentUser.id %>/edit" class="navbar-item">
-          Edit profile
-        </a>
-        <a href="/logout" class="navbar-item">
-          Logout
-        </a>
-      </div>
-      <%} else {%>
-        <div class="navbar-dropdown">
-          <a href="/register" class="navbar-item">
-            Sign Up
-          </a>
-          <a href="/login" class="navbar-item">
-            Login
-          </a>
-        </div>
-      <% } %>
   </div>
+
 </nav>
