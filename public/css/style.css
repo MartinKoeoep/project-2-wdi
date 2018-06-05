@@ -1,0 +1,22 @@
+div .indexcolumn{
+  height: 300px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smallImage{
+  max-height: 270px;
+  max-width: auto;
+}
+
+.artInfo{
+  color: black;
+  font-size: 1.2rem;
+}
+
+screensizeimage{
+  max-height: 100vh;
+  max-width: auto;
+
+}

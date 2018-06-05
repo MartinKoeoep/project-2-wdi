@@ -1,14 +1,15 @@
 <h2><%= artwork.name %></h2>
-<div class="colums">
+<div class="columns is-multiline">
   <div class="column is-half">
     <img src="<%= artwork.source %>" alt="<%= artwork.artName %>">
   </div>
   <div class="column is-one-quarter">
-    <ul>
-      <li>Name <%= artwork.artName %></li>
-      <li>Cost £<%= artwork.cost %></li>
-      <li><a href='/users/<%= artwork.creator._id %>'>Artist <%= artwork.creator.username %></a></li>
-      <li>Client <%= artwork.client %></li>
+    <ul class="">
+
+      <li>Name - <span class="artInfo"><%= artwork.artName %></span></li>
+      <li>Cost - £<span class="artInfo"><%= artwork.cost %></span></li>
+      <li>Artist - <span class="artInfo"><a href='/users/<%= artwork.creator._id %>'><%= artwork.creator.username %></a></span></li>
+      <li>Client - <span class="artInfo"><%= artwork.client %></span></li>
     </ul>
     <% if((locals.isLoggedIn)){%>
       <% if((locals.user.username === artwork.creator.username)){%>

@@ -16,9 +16,20 @@
   </div>
   <div class="">
     <label class="label">Information about you and commissioning</label>
-    <div class="control">
-      <textarea class="editable" name="bio" rows="10" cols="50"><%= user.bio %></textarea>
-    </div>
+    <ul>
+      Talk about
+      <li>Who you are.</li>
+      <li>What is the pricerange to commission you.</li>
+      <li>What you like to draw and are good at.</li>
+      <li>What you definitely do not want to draw.</li>
+      <li>How long a single piece usually takes.</li>
+    </ul>
+    <fieldset>
+      <legend>Your profile</legend>
+      <div class="control">
+        <textarea class="editable" name="bio" rows="10" cols="50"><%= user.bio %></textarea>
+      </div>
+    </fieldset>
   </div>
   <div class="">
     <legend>Which styles suit you best?</legend>
