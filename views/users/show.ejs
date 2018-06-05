@@ -1,7 +1,12 @@
-<div class="column is-multiline">
-  <div class="column is-one-quarter">
-    <h2><%= user.username %></h2>
+<div class="columns is-multiline">
+  <div class="column is-one-quarter bioSidebar">
+    <h1><%= user.username %></h1>
     <img src="<%= user.displayPic %>" alt="<$= user.username %>">
+    <% if (user.avaliability) {%>
+      <i class="fas fa-check-square fa-2x"></i>
+    <%} else { %>
+      <i class="fas fa-times-circle fa-2x"></i>
+    <%}%>
     <a email="<%= user.email %>"><%= user.email %></a>
   </div>
   <div class="column is-half">

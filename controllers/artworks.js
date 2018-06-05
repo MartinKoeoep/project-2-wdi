@@ -5,6 +5,7 @@ function artworksIndex(req, res){
     .find()
     .exec()
     .then( artworks => {
+      sortByKey(artworks, 'updatedAt');
       res.render('artworks/index', {
         title: 'All the artworks',
         artworks
@@ -68,6 +69,12 @@ function artworksDelete(req, res){
     });
 }
 
+function sortByKey(array, key) {
+  return array.sort(function(a, b) {
+    var x = b[key]; var y = a[key];
+    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  });
+}
 
 module.exports = {
   index: artworksIndex,

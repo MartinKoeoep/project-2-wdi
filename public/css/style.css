@@ -15,8 +15,27 @@ div .indexcolumn{
   font-size: 1.2rem;
 }
 
-screensizeimage{
+.screensizeimage{
   max-height: 100vh;
   max-width: auto;
+}
 
+.bioSidebar{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.loginForm{
+  align-items: center;
+}
+
+.loginForm, .loginInfo{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+}
+.loginInfo label{
+  text-align: left;
 }
