@@ -1,22 +1,22 @@
 <h2>Edit your profile</h2>
 <form action="/users/<%= user.id %>" method="post">
   <input type="hidden" name="_method" value="PUT">
-  <div class="">
-    <legend>Are you avaliable for new commissions?</legend>
+  <div class="formElement">
+    <legend><strong>Are you avaliable for new commissions?</strong></legend>
   <div>
     <input type="checkbox" id="true" name="avaliability" value="true">
     <label for="coding"></label>
   </div>
-  <div class="">
+  <div class="formElement">
     <label class="label">Display Picture link</label>
     <div class="control">
       <input class="input" type="text" name="displayPic" value="<%= user.displayPic %>">
     </div>
   </div>
-  <div class="">
+  <div class="formElement">
     <label class="label">Information about you and commissioning</label>
     <ul>
-      Talk about
+      <strong>Talk about</strong>
       <li>Who you are.</li>
       <li>What is the pricerange to commission you.</li>
       <li>What you like to draw and are good at.</li>
@@ -24,30 +24,31 @@
       <li>How long a single piece usually takes.</li>
     </ul>
     <fieldset>
-      <legend>Your profile</legend>
+      <legend><strong>Your profile</strong></legend>
       <div class="control">
         <textarea class="editable" name="bio" rows="10" cols="50"><%= user.bio %></textarea>
       </div>
     </fieldset>
   </div>
-  <div class="">
-    <legend>Which styles suit you best?</legend>
-  <div>
-    <input type="checkbox" id="digital" name="prefStyles" value="Digital">
-    <label for="coding">Digital</label>
+  <div class="formElement">
+    <legend><strong>Which styles suit you best?</strong></legend>
+    <div>
+      <input type="checkbox" id="digital" name="prefStyles" value="Digital">
+      <label for="coding">Digital</label>
+    </div>
+    <div>
+      <input type="checkbox" id="model-edits" name="prefStyles" value="Model-edits">
+      <label for="music">Model Edits</label>
+    </div>
+    <div>
+      <input type="checkbox" id="image-edits" name="prefStyles" value="Image-edits">
+      <label for="music">Image Edits</label>
+    </div>
+    <div>
+      <input type="checkbox" id="photography" name="prefStyles" value="Photography">
+      <label for="music">Photography</label>
+    </div>
   </div>
-  <div>
-    <input type="checkbox" id="model-edits" name="prefStyles" value="Model edits">
-    <label for="music">Model Edits</label>
-  </div>
-  <div>
-    <input type="checkbox" id="image-edits" name="prefStyles" value="Image edits">
-    <label for="music">Image edits</label>
-  </div>
-  <div>
-    <input type="checkbox" id="photography" name="prefStyles" value="Photography">
-    <label for="music">Photography</label>
-
   <div class="field is-grouped">
     <div class="control">
       <button class="button is-link">Submit</button>

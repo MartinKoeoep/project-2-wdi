@@ -152,6 +152,24 @@ a{
   background-color: #97F2D1;
 }
 
+.formElement{
+  margin-bottom: 20px;
+}
+.formElement li{
+  list-style: circle;
+  margin-left: 20px;
+}
 fieldset{
   padding: 10px;
+}
+.fa-envelope, .fa-lock{
+  color: #005C4D;
+}
+
+.button.is-link, .button.is-success{
+  background-color: #005C4D;
+}
+
+.input{
+  border-color: #005C4D;
 }

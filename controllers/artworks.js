@@ -74,6 +74,7 @@ function artworksHome(req, res){
     .find()
     .exec()
     .then(artworks => {
+      sortByKey(artworks, 'updatedAt');
       res.render('home',{artworks});
     });
 }
