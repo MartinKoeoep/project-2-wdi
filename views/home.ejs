@@ -10,9 +10,11 @@
     <div class="column is-half">
       <div id="slideshow">
         <% artworks.forEach( (product) => { %>
-         <div class='imagesContainer'>
-           <img class="slideShowImages" src="<%= product.source %>">
-         </div>
+          <div class='imagesContainer'>
+            <a href="/artworks/<%= product._id %>">
+              <img class="slideShowImages" src="<%= product.source %>">
+            </a>
+          </div>
         <% }) %>
       </div>
     </div>

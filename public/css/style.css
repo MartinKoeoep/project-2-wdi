@@ -151,3 +151,7 @@ a{
 .navbar{
   background-color: #97F2D1;
 }
+
+fieldset{
+  padding: 10px;
+}
