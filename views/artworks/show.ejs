@@ -28,6 +28,10 @@
           <button name="button">Delete</button>
         </form>
       <% } %>
+      <form class="" action="/artworks/<%= artwork.id%>/rate" method="post">
+  <div><%= artwork.rating %></div>
+  <button name="button">Star</button>
+</form>
     <% } %>
   </div>
 </div>

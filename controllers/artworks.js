@@ -79,12 +79,35 @@ function artworksHome(req, res){
     });
 }
 
+function artworksRating(req, res){
+  Artworks
+    .findById(req.params.id)
+    .populate('creator')
+    .exec()
+    .then( artwork => {
+      for (var i =0; i < artwork.ratings.length; i++)
+        if (artwork.ratings[i].liker === res.locals.currentUser.username) {
+          artwork.ratings.splice(i,1);
+          artwork.save();
+          return res.redirect(`/artworks/${artwork.id}`);
+        }
+      artwork.ratings.push({tally: 1, liker: res.locals.currentUser.username});
+      console.log(artwork.ratings);
+      artwork.save();
+      return res.redirect(`/artworks/${artwork.id}`);
+    });
+}
+
+
+
 function sortByKey(array, key) {
   return array.sort(function(a, b) {
     var x = b[key]; var y = a[key];
     return ((x < y) ? -1 : ((x > y) ? 1 : 0));
   });
 }
+
+
 
 module.exports = {
   index: artworksIndex,
@@ -94,5 +117,6 @@ module.exports = {
   edit: artworksEdit,
   update: artworksUpdate,
   delete: artworksDelete,
-  home: artworksHome
+  home: artworksHome,
+  createRating: artworksRating
 };

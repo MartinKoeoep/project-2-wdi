@@ -41,7 +41,8 @@ router.route('/artworks/:id')
   .get(artworksController.show)
   .put(artworksController.update)
   .delete(artworksController.delete);
-
+router.route('/artworks/:id/rate')
+  .post(artworksController.createRating);
 router.route('/artworks/:id/edit')
   .get(artworksController.edit);
 
