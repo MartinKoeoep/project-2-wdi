@@ -28,6 +28,16 @@ div .indexcolumn{
   flex-flow: column;
   align-items: center;
 }
+
+.userCard:hover, .userCardSmall:hover{
+  background-color: #fafafa;
+  box-shadow: 2px 2px #666;
+}
+
+a{
+  color: #005C4D;
+}
+
 .bioSidebar *{
   margin-bottom: 10px;
 }
@@ -79,10 +89,10 @@ div .indexcolumn{
   width: 760px;
   height: 30px;
   border-radius: 2px;
-  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-bottom: 5px;
   border: 1px solid black;
   box-shadow: 3px 3px grey;
-  margin: auto;
   display: flex;
 }
 .userCardSmall p{
