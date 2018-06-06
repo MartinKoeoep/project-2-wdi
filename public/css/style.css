@@ -1,9 +1,4 @@
-body{
-}
-.columns{
-  background-color: white;
-}
-.column{
+.columnMargin{
   margin: auto;
 }
 div .indexcolumn{
@@ -32,7 +27,9 @@ div .indexcolumn{
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: space-between;
+}
+.bioSidebar *{
+  margin-bottom: 10px;
 }
 
 .loginForm{
@@ -57,6 +54,22 @@ div .indexcolumn{
   display: flex;
   margin-bottom: 5px;
 }
+
+.userCard h1{
+  margin-left: 10px;
+  font-size: 36px;
+  line-height: 65px;
+  width: 250px;
+}
+
+.userCard i{
+  width: 50px;
+  line-height: 65px;
+}
+.userCard .styles{
+  text-align: left;
+  font-size: 14px;
+}
 .userCardSmall{
   width: 760px;
   height: 30px;
@@ -75,8 +88,9 @@ div .indexcolumn{
 }
 
 .displayPic{
-  height: 65px;
-  width: 65px;
+  height: 63px;
+  width: 63px;
+  border-right: 1px solid black;
 }
 
 .styles{

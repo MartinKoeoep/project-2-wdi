@@ -1,10 +1,13 @@
-<div class="column">
+<div class="column columnMargin">
   <% users.forEach((user) => { %>
     <% if (user.prefStyles.length > 0){ %>
       <a href='/users/<%= user._id %>'>
       <div class="userCard">
-        <img class="displayPic" src="<%= user.displayPic %>" alt="<$= user.username %>">
-        <div class="userAndAvaliability">
+        <% if (user.displayPic){%>
+          <img class="displayPic" src="<%= user.displayPic %>" alt="<$= user.username %>">
+        <%} else {%>
+          <img class="displayPic "src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg" alt="Default profile pic">
+        <% } %>
         <h1>
             <%= user.username %>
         </h1>
@@ -13,8 +16,11 @@
         <%} else { %>
           <i class="fas fa-times-circle fa-2x"></i>
         <%}%>
+        <div class='styles'>
+        Preferred styles:
+        <br>
+        <%= user.prefStyles.join(', ') %>
         </div>
-        <div class='styles'> <%= user.prefStyles.join(', ') %> </div>
       </div>
       </a>
     <% } %>
