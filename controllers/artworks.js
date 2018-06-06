@@ -30,7 +30,7 @@ function artworksNew(req, res){
 
 function artworksCreate(req, res){
   const artworkData = req.body;
-  artworkData['creator'] = res.locals.user.id;
+  artworkData['creator'] = res.locals.currentUser.id;
   Artworks
     .create(req.body)
     .then((artwork) => {
@@ -44,7 +44,7 @@ function artworksEdit(req, res){
     .populate('creator')
     .exec()
     .then((artwork)=>{
-      if (!(res.locals.username === artwork.creator.username)) return res.redirect('/');
+      if (!(res.locals.currentUser.username === artwork.creator.username)) return res.redirect('/');
       res.render('artworks/edit', {artwork});
     });
 }

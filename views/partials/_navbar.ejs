@@ -1,4 +1,4 @@
-<nav class="navbar is-turqoise" role="navigation" aria-label="main navigation">
+<nav class="navbar has-background-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a id='check'class="navbar-item" href="/">
       <img src="https://imgur.com/t5VqfJz.jpg" alt="A Glaring Goat">
@@ -13,7 +13,6 @@
   <div class="navbar-menu" id="navMenu">
     <% if(locals.isLoggedIn){%>
     <div class="navbar-start">
-      <h2>Welcome back, <%= locals.currentUser.username %>!</h2>
     </div>
     <% } %>
     <div class="navbar-end">
@@ -30,7 +29,12 @@
       <% } %>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link ">
-          Account
+          <% if(locals.isLoggedIn){%>
+            <%= locals.currentUser.username %>
+          <%} else {%>
+            Account
+          <% } %>
+
         </a>
         <% if(locals.isLoggedIn){%>
           <div class="navbar-dropdown">
