@@ -1,7 +1,11 @@
 <div class="columns is-multiline">
   <div class="column is-one-quarter bioSidebar">
     <h1><%= user.username %></h1>
-    <img src="<%= user.displayPic %>" alt="<$= user.username %>">
+    <% if (user.displayPic){%>
+      <img src="<%= user.displayPic %>" alt="<$= user.username %>">
+    <%} else {%>
+      <img src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg" alt="Default profile pic">
+    <% } %>
     <% if (user.avaliability) {%>
       <i class="fas fa-check-square fa-2x"></i>
     <%} else { %>
@@ -15,20 +19,20 @@
     <h4><%= user.prefStyles.join(',  ') %></h4>
   </div>
 </div>
-<h2><%= user.username%>'s artwork!</h2>
+<h2>Artwork by <%= user.username%>!</h2>
 <div class="columns is-multiline">
 <% locals.user.artworks.forEach( artwork =>{ %>
   <div class="indexcolumn column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
-    <img id="<%= artwork._id %>" class="modalImage smallImage" src="<%= artwork.source %>" alt=" <%= artwork.artName %> ">
+  <img id="<%= artwork._id %>" class="modalImage smallImage" src="<%= artwork.source %>" alt=" <%= artwork.artName %> ">
   </div>
   <div  class="modal <%= artwork._id %>">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-      <p class="image">
-        <img class="screensizeimage" src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
-      </p>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+  <div class="modal-background"></div>
+  <div class="modal-content">
+  <p class="image">
+  <img class="screensizeimage" src='<%= artwork.source %>' alt='<%= artwork.artName %>' />
+  </p>
   </div>
-<% }) %>
+  <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <% }) %>
 </div>

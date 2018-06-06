@@ -7,10 +7,6 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const artworksController = require('../controllers/artworks');
 
-router.get('/',(req, res) => res.render('home',{
-  isHomepage: true
-}));
-
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
@@ -32,7 +28,8 @@ router.route('/users/:id/edit')
   .get(users.edit);
 
 
-
+router.route('/')
+  .get(artworksController.home);
 router.route('/artworks')
   .get(artworksController.index)
   .post(artworksController.create);

@@ -1,6 +1,6 @@
 <h1 class="title"><%= title %></h1>
 <div class="columns is-multiline">
-  <% artworks.forEach( (product, key) => { %>
+  <% artworks.forEach( (product) => { %>
     <div class="indexcolumn column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
       <a href="/artworks/<%= product._id %>">
         <img class="smallImage" src="<%= product.source %>" alt="<%= product.artName %>">

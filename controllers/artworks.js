@@ -69,6 +69,15 @@ function artworksDelete(req, res){
     });
 }
 
+function artworksHome(req, res){
+  Artworks
+    .find()
+    .exec()
+    .then(artworks => {
+      res.render('home',{artworks});
+    });
+}
+
 function sortByKey(array, key) {
   return array.sort(function(a, b) {
     var x = b[key]; var y = a[key];
@@ -83,5 +92,6 @@ module.exports = {
   create: artworksCreate,
   edit: artworksEdit,
   update: artworksUpdate,
-  delete: artworksDelete
+  delete: artworksDelete,
+  home: artworksHome
 };

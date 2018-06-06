@@ -1,5 +1,4 @@
 body{
-  background-color: #D3D3D3;
 }
 .columns{
   background-color: white;
@@ -27,7 +26,6 @@ div .indexcolumn{
 
 .screensizeimage{
   max-height: 100vh;
-  max-width: auto;
 }
 
 .bioSidebar{
@@ -41,10 +39,9 @@ div .indexcolumn{
   align-items: center;
 }
 
-.loginForm, .loginInfo{
+.loginForm{
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
 }
 .loginInfo label{
   text-align: left;
@@ -97,16 +94,31 @@ div .indexcolumn{
 #slideshow {
     margin: 50px auto;
     position: relative;
-    width: 240px;
-    height: 240px;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    width: 50vh;
+    height: 50vh;
+}
+.imagesContainer{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.slideShowImages{
+  max-height: 100%;
+  max-width: 100%;
+}
 #slideshow > div {
     position: absolute;
     top: 10px;
     left: 10px;
     right: 10px;
     bottom: 10px;
+}
+
+.title, .subtitle, .navbar a, .navbar-link::after{
+  color: #005C4D;
+}
+
+.navbar{
+  background-color: #97F2D1;
 }

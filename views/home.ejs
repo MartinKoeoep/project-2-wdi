@@ -1,11 +1,19 @@
-<div id="slideshow">
-   <div>
-     <img src="//farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
-   </div>
-   <div>
-     <img src="//farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
-   </div>
-   <div>
-     Pretty cool eh? This slide is proof the content can be anything.
-   </div>
-</div>
+  <div class="columns is-multiline frontpage">
+    <div class="column is-half">
+      <h1 class="title">
+        CommissionArt
+      </h1>
+      <h2 class="subtitle">
+        Your direct source for artists avaliable for commission.
+      </h2>
+    </div>
+    <div class="column is-half">
+      <div id="slideshow">
+        <% artworks.forEach( (product) => { %>
+         <div class='imagesContainer'>
+           <img class="slideShowImages" src="<%= product.source %>">
+         </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
