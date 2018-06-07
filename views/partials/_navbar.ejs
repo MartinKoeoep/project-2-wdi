@@ -27,9 +27,9 @@
       </a>
       <% } %>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link ">
+        <a class="navbar-link " href='/users/<%= locals.currentUser.id %>'>
           <% if(locals.isLoggedIn){%>
-            <%= locals.currentUser.username %>
+              <%= locals.currentUser.username %>
           <%} else {%>
             Account
           <% } %>
