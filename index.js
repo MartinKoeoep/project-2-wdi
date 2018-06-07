@@ -6,9 +6,10 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const session = require('express-session');
 
-const databaseURI = 'mongodb://localhost/project2artistDB';
+// const databaseURI = 'mongodb://localhost/project2artistDB';
+const {port, dbURI} = require('./config/enviroment');
 
-mongoose.connect(databaseURI);
+mongoose.connect(dbURI);
 
 const router = require('./config/routes');
 const User = require('./models/user');
@@ -61,4 +62,4 @@ app.use((req, res, next) => {
 app.use(router);
 
 // listen out for incoming requests on PORT 4000
-app.listen(4000, ()=> console.log('Express is listening to port 4000'));
+app.listen(port, ()=> console.log('Express is listening to port '+ port));
