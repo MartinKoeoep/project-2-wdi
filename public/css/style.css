@@ -171,6 +171,10 @@ fieldset{
   color: #005C4D;
 }
 
+.likebutton:hover{
+  background-color: #004137;
+}
+
 .likebutton{
   color: white;
   font-weight: bold;
@@ -188,4 +192,8 @@ fieldset{
 
 .input{
   border-color: #005C4D;
+}
+
+textarea:focus, input:focus, button:focus{
+    outline: none;
 }
