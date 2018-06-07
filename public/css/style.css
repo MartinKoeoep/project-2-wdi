@@ -19,10 +19,6 @@ div .indexcolumn{
   font-size: 1.2rem;
 }
 
-.screensizeimage{
-  max-height: 100vh;
-}
-
 .bioSidebar{
   display: flex;
   flex-flow: column;
