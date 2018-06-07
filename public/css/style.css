@@ -60,7 +60,7 @@ a{
 }
 
 .userCard{
-  width: 760px;
+  width: 90%;
   height: 65px;
   border-radius: 2px;
   border: 1px solid black;
@@ -86,7 +86,7 @@ a{
   font-size: 14px;
 }
 .userCardSmall{
-  width: 760px;
+  width: 90%;
   height: 30px;
   border-radius: 2px;
   margin: 0 auto;
@@ -95,6 +95,10 @@ a{
   box-shadow: 3px 3px grey;
   display: flex;
 }
+.userCardSmall h1{
+  margin-left: 10px;
+}
+
 .userCardSmall p{
   color: grey;
   font-size: 0.8em;
@@ -202,4 +206,22 @@ fieldset{
 
 textarea:focus, input:focus, button:focus{
     outline: none;
+}
+
+@media only screen and (max-width: 758px) {
+    .displayPic{
+      display: none;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .userCard, .userCardSmall{
+      width: 90%;
+      justify-content: space-between;
+    }
+    .styles{
+      display: none;
+    }
+    .userCardSmall p{
+      display: none;
+    }
 }
