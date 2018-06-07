@@ -28,10 +28,14 @@
           <button name="button">Delete</button>
         </form>
       <% } %>
-      <form class="" action="/artworks/<%= artwork.id%>/rate" method="post">
-  <div><%= artwork.rating %></div>
-  <button name="button">Star</button>
-</form>
     <% } %>
+    <form class="" action="/artworks/<%= artwork.id%>/rate" method="post">
+      <div class="field is-grouped">
+        <div class="artworkRating"><%= artwork.rating %><i class="fas fa-star fa-sm"></i></div>
+        <% if((locals.isLoggedIn)){%>
+          <button class="likebutton" name="button">+1</button>
+        <% } %>
+      </div>
+    </form>
   </div>
 </div>

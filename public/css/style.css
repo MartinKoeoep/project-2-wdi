@@ -162,12 +162,28 @@ a{
 fieldset{
   padding: 10px;
 }
-.fa-envelope, .fa-lock{
+
+.button.is-link, .button.is-success, .likebutton{
+  background-color: #005C4D;
+}
+
+.fa-envelope, .fa-lock, .fa-star{
   color: #005C4D;
 }
 
-.button.is-link, .button.is-success{
-  background-color: #005C4D;
+.likebutton{
+  color: white;
+  font-weight: bold;
+  line-height: 2em;
+  font-size: 1.5em;
+  height: 2em;
+}
+
+.artworkRating{
+  border: 1px solid silver;
+  height: 2em;
+  font-size: 1.5em;
+  line-height: 2em;
 }
 
 .input{

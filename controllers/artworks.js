@@ -92,7 +92,6 @@ function artworksRating(req, res){
           return res.redirect(`/artworks/${artwork.id}`);
         }
       artwork.ratings.push({tally: 1, liker: res.locals.currentUser.username});
-      console.log(artwork.ratings);
       artwork.save();
       return res.redirect(`/artworks/${artwork.id}`);
     });
