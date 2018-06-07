@@ -27,14 +27,15 @@
       </a>
       <% } %>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href='/users/<%= locals.currentUser.id %>'>
-          <% if(locals.isLoggedIn){%>
-              <%= locals.currentUser.username %>
-          <%} else {%>
-            Account
-          <% } %>
-
-        </a>
+        <% if(locals.isLoggedIn){%>
+          <a class="navbar-link " href='/users/<%= locals.currentUser.id %>'>
+                <%= locals.currentUser.username %>
+          </a>
+        <%} else {%>
+          <a class="navbar-link ">
+              Account
+          </a>
+        <% } %>
         <% if(locals.isLoggedIn){%>
           <div class="navbar-dropdown">
             <a href="/users/<%= locals.currentUser.id %>/edit" class="navbar-item">
