@@ -27,4 +27,4 @@ I found NodeJS to be incredibly complicated initially, it was definitely a learn
 
 #In review
 
-Overall, I'm pleased with what I was able to create in the span of the time we were given, I definitely learned much about NodeJS. I was surprised initially to see how easy it is to featurebloat my own creation in the planning stages, before I was able to get any code down. But thanks to having it planned out and prioritised the features accordingly I was able to remove features that would've been nice to haves rather than must-haves.
+Overall, I'm pleased with what I was able to create in the span of the time we were given, I definitely learned much about NodeJS. I was surprised initially to see how easy it is to feature-bloat my own creation in the planning stages, before I was able to get any code down. But thanks to having it planned out and prioritised the features accordingly I was able to remove features that would've been nice to haves rather than must-haves.
